@@ -5,14 +5,14 @@
 </div>
 
 <div class="px-5">
-  <div class="d-flex justify-content-end align-items-center">
+  <div class="d-flex justify-content-end align-items-center mb-4">
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-flat" %>
   </div>
 
 
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="co-12 colsm-6 col-md-4">
+      <div class="co-12 colsm-6 col-md-4 mb-4">
         <div class="card-movie">
           <img src="<%= bookmark.movie.poster_url %>" />
           <div class="card-movie-infos">

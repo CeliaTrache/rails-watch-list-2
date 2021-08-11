@@ -6,7 +6,7 @@
 </div>
 
 <div class="px-5">
-  <div class="d-flex justify-content-between align-items-center">
+  <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>My lists</h1>
 
     <%= link_to 'Create a movie list', new_list_path, class: "btn btn-flat" %>
@@ -16,7 +16,7 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="co-12 colsm-6 col-md-4">
-        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-list mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
           <%= link_to list.name, list_path(list) %>
         </div>
       </div>
