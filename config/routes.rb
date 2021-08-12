@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'lists#index'
 
   resources :lists, only: [:show, :new, :create] do
-    resources :bookmarks, only: [:new, :create]
+    # resources :bookmarks, only: [:new, :create]
+    # Option 6 - New bookmark form on the list show page
+    resources :bookmarks, only: [:create]
   end
 
   resources :bookmarks, only: [:destroy]

@@ -7,7 +7,8 @@
 
 <div class="px-5">
   <div class="d-flex justify-content-end align-items-center mb-4">
-    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-flat" %>
+    <%# Option 6 - New bookmark form on the list show page %>
+    <%#= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-flat" %>
   </div>
 
 
@@ -28,6 +29,16 @@
           </div>
         </div>
       </div>
+    <% end %>
+  </div>
+
+  <div>
+    <h1>Add a movie</h1>
+
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie, input_html: { class: 'select2' } %>
+      <%= f.input :comment %>
+      <%= f.button :submit %>
     <% end %>
   </div>
 </div>
