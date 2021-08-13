@@ -16,9 +16,11 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="co-12 colsm-6 col-md-4">
-        <div class="card-list mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? (cl_image_path list.photo.key) : 'https://resize-elle.ladmedia.fr/rcrop/1098,768/img/var/plain_site/storage/images/loisirs/cinema/dossiers/cinema-comment-l-industrie-culturelle-s-adapte-t-elle-au-scenario-catastrophe-du-coronavirus-3864417/93174471-1-fre-FR/Cinema-comment-l-industrie-culturelle-s-adapte-t-elle-au-scenario-catastrophe-du-coronavirus.jpg' %>)">
-          <%= link_to list.name, list_path(list) %>
-        </div>
+        <%= link_to list_path(list) do %>
+          <div class="card-list mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? (cl_image_path list.photo.key) : 'https://resize-elle.ladmedia.fr/rcrop/1098,768/img/var/plain_site/storage/images/loisirs/cinema/dossiers/cinema-comment-l-industrie-culturelle-s-adapte-t-elle-au-scenario-catastrophe-du-coronavirus-3864417/93174471-1-fre-FR/Cinema-comment-l-industrie-culturelle-s-adapte-t-elle-au-scenario-catastrophe-du-coronavirus.jpg' %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
