@@ -32,18 +32,11 @@
     <% end %>
   </div>
 
-  <div>
-    <h1>Add a movie</h1>
+  <h1>Add a movie</h1>
 
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.association :movie, input_html: { class: 'select2' } %>
-      <%= f.input :comment %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, input_html: { class: 'select2' } %>
+    <%= f.input :comment %>
+    <%= f.button :submit %>
+  <% end %>
 </div>
-
-
-<ul>
-
-</ul>
